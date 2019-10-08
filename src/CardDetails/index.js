@@ -8,7 +8,7 @@ import '../CardDetails/styles.scss';
  * @returns {JSX.Element} - Rendered component 
  */
 
-function CardDetails() {
+export function CardDetails() {
   return (
     <div className="App">
       <header className="App-header">
@@ -17,4 +17,3 @@ function CardDetails() {
   );
 }
 
-export default CardDetails;

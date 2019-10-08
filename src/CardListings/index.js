@@ -1,6 +1,6 @@
 import React from 'react';
 import '../CardListings/styles.scss';
-import CardDetails from '../CardDetails'
+import { CardDetails } from '../CardDetails'
 
 /**
  * Functional react component for displaying list of cards.
@@ -9,7 +9,7 @@ import CardDetails from '../CardDetails'
  * @returns {JSX.Element} - Rendered component 
  */
 
-function CardListings() {
+export function CardListings() {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,4 +19,3 @@ function CardListings() {
   );
 }
 
-export default CardListings;

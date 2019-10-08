@@ -1,13 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import CardListings from './CardListings';
+import { CardListings } from '../CardListings';
 import Enzyme, {shallow} from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
+import { findByTestAttr } from '../test/testUtils';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<CardListings />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const setup = (props={}) => {
+    return shallow(<CardListings {...props}/>)
+};
+
+describe('The Card Listings Grid', () => {
+  test('CardListings renders without error', () =>{
+    const wrapper = setup();
+    const appComponent = findByTestAttr(wrapper,'component-card-listings');
+    expect(appComponent.length).toBe(1);
+    });
+
+   test('Call to axios and returns images',() => {
+    const images = CardListings('kittens');
+   });
+
 });
