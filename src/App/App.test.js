@@ -7,8 +7,14 @@ import { findByTestAttr } from '../test/testUtils';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const setup = (props={}) => {
+  return shallow(<App {...props}/>)
+};
+
+describe('The App component acting as a wrapper', () => {
+  test('App renders without error', () =>{
+  const wrapper = setup();
+  const appComponent = findByTestAttr(wrapper,'component-app');
+  expect(appComponent.length).toBe(1);
+  });
 });
