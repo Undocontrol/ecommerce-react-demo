@@ -1,8 +1,8 @@
 import React from 'react';
-import { CardListings } from '../CardListings';
+import { CardListings } from '.';
 import Enzyme, {shallow} from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
-import { findByTestAttr } from '../test/testUtils';
+import { findByTestAttr } from '../../test/testUtils';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
@@ -13,12 +13,16 @@ const setup = (props={}) => {
 describe('The Card Listings Grid', () => {
   test('CardListings renders without error', () =>{
     const wrapper = setup();
-    const appComponent = findByTestAttr(wrapper,'component-card-listings');
-    expect(appComponent.length).toBe(1);
+    const cardListingsComponent = findByTestAttr(wrapper,'component-card-listings');
+    expect(cardListingsComponent.length).toBe(1);
     });
 
    test('Call to axios and returns images',() => {
-    const images = CardListings('kittens');
+  
+   });
+
+   test('redirect to the product page when an image is clicked',() => {
+
    });
 
 });
