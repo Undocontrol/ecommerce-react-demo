@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import CardListings from './CardListings';
 import Enzyme, {shallow} from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
-import { findByTestAttr } from '../test/testUtils';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<CardListings />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
