@@ -12,7 +12,7 @@ import { Counter } from '../Counter';
 
 export function CardDetails(props) {
   return (
-    <div className="App">
+    <div className="card-details" data-test="componenet-card-details">
       <Button 
         onclick={ () => {
           alert('hello world')
