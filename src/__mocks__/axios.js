@@ -1,37 +1,39 @@
-
-export default {
-    get: jest.fn((url)=> {
-
-        if(url.includes('/product/')) {
-            Promise.resolve({ Products: [
-                {
-                    Name: 'Foo',
-                    ImageUrls: {
-                        ImageNo: 1,
-                        ImageUrl: 'http://test.com/image.png',
-                        Description: 'Lorem Lipsum'
-                    },
-                    ProductID: '1234'
-                },
-                {
-                    Name: 'Bar',
-                    ImageUrls: {
-                        ImageNo: 1,
-                        ImageUrl: 'http://test.com/image2.png',
-                        Description: 'Lorem Lipsum 2'
+export default (url) => {
+    if (url.includes('/product/')) {
+        return Promise.resolve({
+            data: {
+                Name: 'Bar',
+                ProductImage: {
+                    Link: {
+                        Href: 'http://test.com/image.png'
                     }
-                }
-            ] })
-        } else if(url.includes('products')) {
-            Promise.resolve({
-                Name: 'Foo',
-                ImageUrls: {
-                    ImageNo: 1,
-                    ImageUrl: 'http://test.com/image.png',
-                    Description: 'Lorem Lipsum'
-                }
-            })
-        }
-
-    })
-};
+                },
+                ProductID: '4321'
+            }
+        })
+    } else if (url.includes('products')) {
+        return Promise.resolve({
+            data: {
+                Products: [
+                    {
+                        Name: 'Foo',
+                        ProductImage: {
+                            Link: {
+                                Href: 'http://test.com/image.png'
+                            }
+                        },
+                        ProductID: '1234'
+                    },
+                    {
+                        Name: 'Bar',
+                        ProductImage: {
+                            Link: {
+                                Href: 'http://test.com/image.png'
+                            }
+                        },
+                    }
+                ]
+            }
+        })
+    }
+}

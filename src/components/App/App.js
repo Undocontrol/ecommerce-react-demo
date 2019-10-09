@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { CardListings } from '../CardListings'
+import { CardListings } from '../CardListings';
 
 /**
  * Functional react component for App component as wrapper

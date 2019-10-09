@@ -9,7 +9,7 @@
     line-height: 0;
     justify-content: space-between;
 
-    li {
+    .card-details {
         list-style-type: none;
         padding: 20px;
     }
@@ -28,20 +28,18 @@
       margin: 0 auto;
       padding: 10px;
 
-      li{
+      .card-details{
         flex: auto;
         -webkit-box-flex: auto;
         -ms-flex: auto;
         margin: 35px;
         padding: 0;
+        transition: transform .2s;
         width: 200px;
-
-        img {
-          transition: transform .2s;
-        }
-        img:hover {
-          transform: scale(1.1);
-        }
+      }
+      .card-details:hover{
+        cursor: pointer;
+        transform: scale(1.1);
       }
     }
   }

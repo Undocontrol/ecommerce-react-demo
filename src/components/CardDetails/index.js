@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import '../CardDetails/styles.scss';
 import { Button } from '../Button';
 import { Counter } from '../Counter';
@@ -13,13 +14,7 @@ import { Counter } from '../Counter';
 export function CardDetails(props) {
   return (
     <div className="card-details" data-test="componenet-card-details">
-      <Button 
-        onclick={ () => {
-          alert('hello world')
-        }}
-        title='Add to cart'
-      />
-      <Counter />
+      <h1>Hello</h1>
     </div>
   );
 }
