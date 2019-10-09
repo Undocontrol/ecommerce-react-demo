@@ -22,12 +22,16 @@ export function CardListings() {
   }, []);
 
   return (
-    <main className="card-listings" data-test="component-card-listsings">
-      <div className="">          
+    <main className="card-listings" data-test="component-card-listings">
+      <article className="card">          
         {data &&
         data.length > 0 &&
-        data.map(product => <li><a href='#' key={product.id}>{product.Title}</a></li>)}
-      </div>
+        data.map(product => 
+        <li>
+          <a href='#'><img src= {product.ProductImage.Link.Href}/></a>
+        </li>
+        )} 
+      </article>
     </main>
   );
 }
