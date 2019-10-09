@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.scss';
-import { Button } from '../../Button'
 
 /**
  * Functional react component for button functionality.
@@ -9,9 +8,9 @@ import { Button } from '../../Button'
  * @returns {JSX.Element} - Rendered component 
  */
 
-export function Button() {
+export function Button(props) {
   return (
-    <div className="Button">
+    <div className="Button" data-attribute="component-button">
     </div>
   );
 }

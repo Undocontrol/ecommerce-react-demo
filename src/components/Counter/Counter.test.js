@@ -23,14 +23,17 @@ Enzyme.configure({ adapter: new EnzymeAdapter() });
     });
     test('quantity starts at 0', () => {
         const wrapper = setup();
-        const initialCounterState = wrapper.state('counter');
-        expect(initialCounterState).toBe(0)
+        const quantity = findByTestAttr(wrapper, 'quantity');;
+        expect(quantity.text).toBe('0');
     });
 
     test('quantity never goes below 0', () => {
         const wrapper = setup();
-        const initialCounterState = wrapper.state('counter');
-        expect(initialCounterState).not.toBe(-1)
+        const decrementButton = findByTestAttr(wrapper, 'decrement')
+        const quantity = findByTestAttr(wrapper, 'quantity');
+        expect(quantity.text).toBe('0')
+        decrementButton.simulate('click');
+        expect(quantity.text).not.toBe('-1')
     });
 
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import '../CardDetails/styles.scss';
+import { Button } from '../Button';
+import { Counter } from '../Counter';
 
 /**
  * Functional react component for displaying the details of a selected card.
@@ -8,11 +10,16 @@ import '../CardDetails/styles.scss';
  * @returns {JSX.Element} - Rendered component 
  */
 
-export function CardDetails() {
+export function CardDetails(props) {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Button 
+        onclick={ () => {
+          alert('hello world')
+        }}
+        title='Add to cart'
+      />
+      <Counter />
     </div>
   );
 }

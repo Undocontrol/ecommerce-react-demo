@@ -18,11 +18,15 @@ const setup = (props={}) => {
     });
 
   test('renders the image of the product', () =>{
-
+    const wrapper = setup();
+    const image = findByTestAttr(wrapper, 'product-image');
+    expect(image.src).toBe('http://test.com/image.png');
   });
 
   test('renders the description of the product', () =>{
-    
+    const wrapper = setup();
+    const description = findByTestAttr(wrapper, 'product-description');
+    expect(description.text).toBe('Lorem Lipsum');
   });
 
 
