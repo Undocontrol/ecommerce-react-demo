@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './styles.scss';
-import { CardDetails } from '../CardDetails'
 
 /**
  * Functional react component for displaying list of cards.
@@ -10,12 +10,24 @@ import { CardDetails } from '../CardDetails'
  */
 
 export function CardListings() {
+  const [data, setData] = useState({ product: [] });
+  const API = 'https://search.moonpig.com/api/products?size=20&fq=card_shop_id:1';
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(API);
+      setData(result.data.Products);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-      <CardDetails />
-    </div>
+    <main className="card-listings" data-test="component-card-listsings">
+      <div className="">          
+        {data &&
+        data.length > 0 &&
+        data.map(product => <li><a href='#' key={product.id}>{product.Title}</a></li>)}
+      </div>
+    </main>
   );
 }
-
