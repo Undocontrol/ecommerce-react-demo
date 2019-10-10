@@ -29,7 +29,7 @@ export function CardListings() {
           data.length > 0 &&
           data.map((product, index) =>
             <li className="card-image" key={index}>
-              <Link to={`/product/${product.MoonpigProductNo}`}
+              <Link to={`/product/${product.MoonpigProductNo}/${product.Title.replace(/ /g,"-")}`}
                 aria-label="Link to selected product"
                 alt="Link to selected product">
                 <img

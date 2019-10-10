@@ -1,3 +1,5 @@
+@import "../../mixins.scss";
+
 .counter{
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,7 +39,7 @@
 
         p {
             text-align:center;
-            font-size: 16px;
+            font-size: 25px;
             line-height: 0px;
         }
 

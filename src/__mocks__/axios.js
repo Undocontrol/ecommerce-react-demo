@@ -3,10 +3,11 @@ export default (url) => {
         return Promise.resolve({
             data: {
                 Name: 'Bar',
-                ProductImage: {
-                    Link: {
-                        Href: 'http://test.com/image.png'
-                    }
+                Description: "Lorem Lipsum",
+                ThumbnailUrl: 'http://test.com/image.png',
+                Size: {
+                    Currency: '£',
+                    Price: 2.99
                 },
                 ProductID: '4321'
             }
@@ -17,6 +18,7 @@ export default (url) => {
                 Products: [
                     {
                         Name: 'Foo',
+                        Title: 'Greeting Card',
                         ProductImage: {
                             Link: {
                                 Href: 'http://test.com/image.png'
@@ -26,6 +28,7 @@ export default (url) => {
                     },
                     {
                         Name: 'Bar',
+                        Title: 'Happy Birthday',
                         ProductImage: {
                             Link: {
                                 Href: 'http://test.com/image.png'

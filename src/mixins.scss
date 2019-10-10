@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy|Poiret+One&display=swap');
 
-$primary-color: #ee447d;
+$primary-color: #6E00E5;
 $primary-font: 'Chewy','Chewy', cursive, sans-serif, Helvetica;
 $secondary-font: 'Poiret One', 'sans-serif', 'Helvetica';
+$box-shadow: 0 5px #2d0f52;
+
+@mixin button-style {
+    background:$primary-color;
+    background-image: -webkit-linear-gradient(top, #6E00E5, #a563f0);
+    background-image: -moz-linear-gradient(top, #6E00E5, #a563f0);
+    background-image: -ms-linear-gradient(top, #6E00E5, #a563f0);
+    background-image: -o-linear-gradient(top, #6E00E5, #a563f0);
+    background-image: linear-gradient(to bottom, #6E00E5, #a563f0);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+}
+
+@mixin button-hover {
+    background: $primary-color;
+    background-image: -webkit-linear-gradient(top, #6E00E5, #430e80);
+    background-image: -moz-linear-gradient(top, #6E00E5, #430e80);
+    background-image: -ms-linear-gradient(top, #6E00E5, #430e80);
+    background-image: -o-linear-gradient(top, #6E00E5, #430e80);
+    background-image: linear-gradient(to bottom, #6E00E5, #430e80);
+    text-decoration: none;
+}

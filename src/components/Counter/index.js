@@ -16,9 +16,19 @@ export function Counter(props) {
     <article className="counter" data-test="component-counter">
       <div className="quantity-selector">
         <p>Quantity</p>
-        <Button className="decrement" onClick={() => setQuantity(quantity > 0 ? quantity - 1 : null)}>-</Button>
-        <input data-test="counter-display" className="quantity-value" type="text" value={quantity} readOnly/>
-        <Button className="increment" onClick={() => setQuantity(quantity + 1)}>+</Button>  
+        <Button 
+          className="decrement"
+          data-test="decrement" 
+          aria-label="Decrease quantity"
+          onClick={() => setQuantity(quantity > 0 ? quantity - 1 : null)}>-
+          </Button>
+        <input data-test="quantity" className="quantity-value" type="text" value={quantity} readOnly/>
+        <Button 
+          className="increment" 
+          data-test="increment"
+          aria-label="Increase quantity"
+          onClick={() => setQuantity(quantity + 1)}>+
+          </Button>  
       </div>
     </article>
   );

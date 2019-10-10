@@ -17,23 +17,19 @@ describe('The quantity Counter', () => {
         expect(counterComponent.length).toBe(1);
     });
 
-    test('renders quantity display', () => {
-        const wrapper = setup();
-        const counterDisplay = findByTestAttr(wrapper, 'counter-display');
-        expect(counterDisplay.length).toBe(1);
-    });
     test('quantity starts at 0', () => {
         const wrapper = setup();
-        const quantity = findByTestAttr(wrapper, 'quantity');;
-        expect(quantity.text).toBe('0');
+        const quantity = findByTestAttr(wrapper, 'quantity');
+        console.log(quantity.text())
+        expect(quantity.props().value).toBe(0);
     });
 
     test('quantity never goes below 0', () => {
         const wrapper = setup();
         const decrementButton = findByTestAttr(wrapper, 'decrement')
         const quantity = findByTestAttr(wrapper, 'quantity');
-        expect(quantity.text).toBe('0')
+        expect(quantity.props().value).toBe(0)
         decrementButton.simulate('click');
-        expect(quantity.text).not.toBe('-1')
+        expect(quantity.props().value).not.toBe(-1)
     });
 })
