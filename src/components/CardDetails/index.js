@@ -29,28 +29,28 @@ export function CardDetails(props) {
   }, []);
 
   return (
-    <div className="card-details" data-test="componenet-card-details">
-      <div className="card-image column">
+    <section className="card-details" data-test="componenet-card-details">
+      <article className="card-image column">
         <h1>{product.Title}</h1>
         <img 
           src={product.ThumbnailUrl}
           alt={product.Title}
           aria-label={product.Title}
         /> 
-      </div>
-      <div className="card-content column">
+      </article>
+      <article className="card-content column">
         {
           /* 
-            Description contains HTML elements eg/ BR, could use React "dangerouslysetinnerhtml"
-            However this comes with security issues, eg/ cross site scripting
+            Description contains HTML elements eg/ <br> tags, I could use React "dangerouslysetinnerhtml"
+            However this comes with security issues, eg/ cross site scripting.
           */
         }
         <p>{product.Description}</p>
         <p>{product.Size.Currency + product.Size.Price}</p>
         <Counter />
         <Button>Buy Me</Button>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 }
 

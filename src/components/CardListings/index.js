@@ -23,7 +23,7 @@ export function CardListings() {
   }, []);
 
   return (
-    <main className="card-listings" data-test="component-card-listings">
+    <section className="card-listings" data-test="component-card-listings">
       <article className="card">
         {data &&
           data.length > 0 &&
@@ -42,6 +42,6 @@ export function CardListings() {
             </li>
           )}
       </article>
-    </main>
+    </section>
   );
 }

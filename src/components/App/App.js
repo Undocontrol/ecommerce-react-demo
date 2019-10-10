@@ -12,8 +12,6 @@ import { CardListings } from '../CardListings';
 function App() {
   return (
     <main className="App" data-test="component-app">
-      <header className="App-header">
-      </header>
       <CardListings />
     </main>
   );
