@@ -34,7 +34,7 @@ Your app is ready to be deployed!
 
 ### Important note:
 
-I had CORS issues when using Chrome so to get around this, I disabled CORS checks in Chome and on safari e.g. open -a Google\ Chrome --args --disable-web-security --user-data-dir. So if you're viewing this on Chrome, you might come across this issue too and so hopefully this will be of use. 
+I had CORS issues when using Chrome/Safari so to get around this, I disabled CORS checks in Chome and on safari e.g. `open -a Google\ Chrome --args --disable-web-security --user-data-dir`. 
 
 ### To-dos
 
