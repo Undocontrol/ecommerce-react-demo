@@ -8,15 +8,17 @@ import './styles.scss';
  * @returns {JSX.Element} - Rendered component 
  */
 
- const Button = ({ text, onClick, type, disabled }) => (
-  <button
-    data-test="component-button"
-    type={type}
-    disabled={disabled}
-    onClick={onClick}
-  >
-    {text}
-  </button>
-);
+const Button = (props) => {
+  return (
+    <button
+      className="button"
+      data-test="component-button"
+      type={props.type}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
+  )
+};
 
 export default Button;

@@ -6,28 +6,24 @@ import { findByTestAttr } from '../../test/testUtils.js';
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-    const setup = (props={}) => {
-        return shallow(<Button {...props}/>)
-    };
+const setup = (props={}) => {
+    return shallow(<Button {...props}/>)
+};
 
-    test('Button renders without error', () =>{
-        const wrapper = setup();
-        const buttonComponent = findByTestAttr(wrapper,'component-button');
-        expect(buttonComponent.length).toBe(1);
-    });
+describe('Reusable button', () => {
+        test('Button renders without error', () =>{
+            const wrapper = setup();
+            const buttonComponent = findByTestAttr(wrapper,'component-button');
+            expect(buttonComponent.length).toBe(1);
+        });
 
-    test('clicking button executes given function', () => {
-        const fn = jest.fn()
-        const wrapper = setup({
-            onclick: fn
-        })
-        const button = findByTestAttr(wrapper, 'component-button');
-        button.simulate('click');
-        expect(fn).toBeCalled()
-});
-
-
-
-  
-
-  
+        test('clicking button executes given function', () => {
+            const fn = jest.fn()
+            const wrapper = setup({
+                onClick: fn
+            })
+            const button = findByTestAttr(wrapper, 'component-button');
+            button.simulate('click');
+            expect(fn).toBeCalled()
+        });
+})

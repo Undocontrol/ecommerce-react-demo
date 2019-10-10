@@ -1,20 +1,41 @@
+@import "../../mixins.scss";
+
 .card-details {
+    border: 1px solid whitesmoke;
+    color: $primary-color;
     flex-direction: row;
     flex-wrap: wrap;
+    font-family: $primary-font;
     width: 100%;
+    position: relative;
 
     .card-image {   
         img {
-            width: 100%;
             max-width: 100%;
+            width: 100%;
         }
     }  
+
+    .card-content {
+        font-family: $secondary-font;
+        align-self: flex-end;
+    }
 }
 
 @media only screen and (min-width: 600px) {
     .card-details {
         display: flex;
-        flex: 2.5;
+        flex: 2.5 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+
+        .card-image {
+            img {
+                width: 300px;
+                padding: 10px;
+            }
+        }
     
         .column {
             display: flex;

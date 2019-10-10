@@ -12,7 +12,12 @@ import { Counter } from '../Counter';
  */
 export function CardDetails(props) {
   const { params } = props.match;
-  const [product, updateProduct] = useState({ });
+  const [product, updateProduct] = useState({
+    Title: '',
+    ThumbnailUrl: '',
+    Description: '',
+    Size: {}
+  });
   const API = `https://www.moonpig.com/uk/api/product/product/?mpn=${params.id}`;
 
   useEffect(() => {
@@ -27,12 +32,23 @@ export function CardDetails(props) {
     <div className="card-details" data-test="componenet-card-details">
       <div className="card-image column">
         <h1>{product.Title}</h1>
-        <img src={product.ThumbnailUrl} /> 
+        <img 
+          src={product.ThumbnailUrl}
+          alt={product.Title}
+          aria-label={product.Title}
+        /> 
       </div>
       <div className="card-content column">
+        {
+          /* 
+            Description contains HTML elements eg/ BR, could use React "dangerouslysetinnerhtml"
+            However this comes with security issues, eg/ cross site scripting
+          */
+        }
         <p>{product.Description}</p>
-        <Button text={"Buy Me"} />
+        <p>{product.Size.Currency + product.Size.Price}</p>
         <Counter />
+        <Button>Buy Me</Button>
       </div>
     </div>
   );
