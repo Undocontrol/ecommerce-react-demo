@@ -1,6 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello,
+
+Thank you for visiting. 
+
+This is an ecommerce demo consuming the moonpig API, using the latest best practices and built in React <3
+Please follow the instructions below to get started and take note of the caveats and "to-do"/improvement list if I had more time. 
 
 ## Available Scripts
+
+First, clone the repo then run `npm install` to install dependencies.
 
 In the project directory, you can run:
 
@@ -12,12 +19,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `npm build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -25,44 +32,34 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Important note:
 
-### `yarn eject`
+I had CORS issues when using Chrome so to get around this, I disabled CORS checks in Chome and on safari e.g. open -a Google\ Chrome --args --disable-web-security --user-data-dir. So if you're viewing this on Chrome, you might come across this issue too and so hopefully this will be of use. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### To-dos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* I attempted this with a TDD approach however, I'm fairly new to TDD and came across one stubborn issue where I couldn't get the test to work. So, I commented it out- if I had more time on it, I would explore how to fix it properly. I'm making assertions on the component HTML output as I struggled to target the specific elements that I wanted. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Adding an API wrapper: The main benefit would have been to consolidate all the API calls to one place where I could define various API endpoints. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* I would have liked to use more of the product objects to drive more functionality for example, a dropdown for card sizes which would alter price. 
 
-## Learn More
+### Resource
+*https://webaim.org/resources/contrastchecker/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*https://airbnb.io/enzyme/docs/api/ShallowWrapper/text.html
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*https://itnext.io/writing-customizable-styled-react-components-51d38ed20461
 
-### Code Splitting
+*https://jestjs.io/docs/en/mock-functions.html
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+*https://www.leighhalliday.com/testing-asynchronous-components-mocks-jest
 
-### Analyzing the Bundle Size
+*https://dev.to/bdbch/react-hooks-for-data-part-1-fetching-data-28ge
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+*https://devhints.io/enzyme
 
-### Making a Progressive Web App
+*https://www.robinwieruch.de/react-hooks-fetch-data
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
