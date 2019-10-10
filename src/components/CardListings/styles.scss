@@ -9,7 +9,7 @@
     line-height: 0;
     justify-content: space-between;
 
-    .card-details {
+    .card-image {
         list-style-type: none;
         padding: 20px;
     }
@@ -28,7 +28,7 @@
       margin: 0 auto;
       padding: 10px;
 
-      .card-details{
+      .card-image{
         flex: auto;
         -webkit-box-flex: auto;
         -ms-flex: auto;
@@ -37,7 +37,7 @@
         transition: transform .2s;
         width: 200px;
       }
-      .card-details:hover{
+      .card-image:hover{
         cursor: pointer;
         transform: scale(1.1);
       }

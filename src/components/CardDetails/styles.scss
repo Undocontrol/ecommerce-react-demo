@@ -1,0 +1,26 @@
+.card-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .card-image {   
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }  
+}
+
+@media only screen and (min-width: 600px) {
+    .card-details {
+        display: flex;
+        flex: 2.5;
+    
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 7.5;
+        }
+    }
+} 

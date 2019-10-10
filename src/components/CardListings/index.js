@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles.scss';
+import { Link } from 'react-router-dom';
 
 /**
  * Functional react component for displaying list of cards.
@@ -10,7 +11,7 @@ import './styles.scss';
  */
 
 export function CardListings() {
-  const [data, setData] = useState({ product: [] });
+  const [data, setData] = useState({ Products: [] });
   const API = 'https://search.moonpig.com/api/products?size=20&fq=card_shop_id:1';
 
   useEffect(() => {
@@ -27,19 +28,17 @@ export function CardListings() {
         {data &&
           data.length > 0 &&
           data.map((product, index) =>
-            <li className="card-details" key={index}>
-              <a
-                href='#'
+            <li className="card-image" key={index}>
+              <Link to={`/product/${product.MoonpigProductNo}`}
                 aria-label="Link to selected product"
-                alt="Link to selected product"
-              >
+                alt="Link to selected product">
                 <img
                   alt={product.Title}
                   aria-label={product.Title}
                   src={product.ProductImage.Link.Href}
                   data-test={`product-image-${index}`}
                 />
-              </a>
+              </Link>
             </li>
           )}
       </article>
